@@ -8,5 +8,5 @@ $query = "DELETE from dosen WHERE dosen=$id";
 $hasil = mysqli_query($conn, $query);
 
 if ($hasil); {
-  header('location:index.php');
+  header('location:dosends.php');
 }
