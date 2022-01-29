@@ -4,7 +4,7 @@ date_default_timezone_get("Asia/Jakarta");
 require 'functions.php';
 $id = $_GET['id'];
 $ds = query("SELECT * FROM dosen WHERE id=$id");
-// var_dump($camaba[0][1]);
+
 ?>
 
 
@@ -79,7 +79,6 @@ $ds = query("SELECT * FROM dosen WHERE id=$id");
       <h3><i class="fas fa-users"></i> Detail Data Dosen</h3>
       <hr>
       <ul class="list-group">
-        <li class="list-group-item"><img src="image/<?= $ds['foto_dosen'];  ?>" alt=""></li>
         <li class="list-group-item active">nama : <?= $ds['nama_dosen'];  ?></li>
         <li class="list-group-item">NIDN : <?= $ds['nidn'];  ?></li>
         <li class="list-group-item">jenis kelamin : <?= $ds['jenis_kelamin'];  ?></li>
@@ -88,6 +87,7 @@ $ds = query("SELECT * FROM dosen WHERE id=$id");
         <li class="list-group-item">pendidikan 1 : <?= $ds['pendidikan_1'];  ?></li>
         <li class="list-group-item">pendidikan 2 : <?= $ds['pendidikan_2'];  ?></li>
         <li class="list-group-item">pendidikan 3 : <?= $ds['pendidikan_3'];  ?></li>
+        <li class="list-group-item"><img src="image/<?= $ds['foto_dosen'];  ?>" alt=""></li>
         <li class="list-group-item">
           <a href="hapusdosen.php?id=<?php echo $ds['no']; ?>" class="btn btn-danger role=" button">Hapus</a>
           <a href="index.php" class="btn btn-primary" role="button">Kembali</a>
