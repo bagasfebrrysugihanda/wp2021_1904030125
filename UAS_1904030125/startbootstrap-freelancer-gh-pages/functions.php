@@ -77,7 +77,7 @@ function cari($keyword)
 {
   global $conn;
 
-  $query = "SELECT * FROM calon_mhs WHERE nama LIKE'%$keyword%'";
+  $query = "SELECT * FROM dbarang WHERE nama LIKE'%$keyword%'";
   $result = mysqli_query($conn, $query);
   $rows = [];
   while ($row = mysqli_fetch_assoc($result)) {

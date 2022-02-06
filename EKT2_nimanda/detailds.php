@@ -80,16 +80,16 @@ $ds = query("SELECT * FROM dosen WHERE id=$id");
       <hr>
       <ul class="list-group">
         <li class="list-group-item active">nama : <?= $ds['nama_dosen'];  ?></li>
-        <li class="list-group-item">NIDN : <?= $ds['nidn'];  ?></li>
+        <li class="list-group-item">NIDN : <?= $ds['nind'];  ?></li>
         <li class="list-group-item">jenis kelamin : <?= $ds['jenis_kelamin'];  ?></li>
-        <li class="list-group-item">alamat rumah : <?= $ds['alamat'];  ?></li>
+        <li class="list-group-item">alamat rumah : <?= $ds['alamat_rumah'];  ?></li>
         <li class="list-group-item">agama : <?= $ds['agama'];  ?></li>
         <li class="list-group-item">pendidikan 1 : <?= $ds['pendidikan_1'];  ?></li>
         <li class="list-group-item">pendidikan 2 : <?= $ds['pendidikan_2'];  ?></li>
         <li class="list-group-item">pendidikan 3 : <?= $ds['pendidikan_3'];  ?></li>
         <li class="list-group-item"><img src="image/<?= $ds['foto_dosen'];  ?>" alt=""></li>
         <li class="list-group-item">
-          <a href="hapusdosen.php?id=<?php echo $ds['no']; ?>" class="btn btn-danger role=" button">Hapus</a>
+          <a href="hapusdosen.php?id=<?php echo $ds['id']; ?>" class="btn btn-danger role=" button">Hapus</a>
           <a href="index.php" class="btn btn-primary" role="button">Kembali</a>
         </li>
       </ul>

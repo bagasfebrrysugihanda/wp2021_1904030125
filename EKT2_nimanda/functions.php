@@ -20,3 +20,24 @@ function query($query)
   }
   return $rows;
 }
+
+function hapus($id)
+{
+  global $conn;
+  mysqli_query($conn, "DELETE FROM dosen WHERE id= $id") or die(mysqli_error($conn));
+  return mysqli_affected_rows($conn);
+}
+
+function cari($keyword)
+{
+  global $conn;
+
+  $query = "SELECT * FROM dosen WHERE nama LIKE'%$keyword%'";
+  $result = mysqli_query($conn, $query);
+  $rows = [];
+  while ($row = mysqli_fetch_assoc($result)) {
+    $rows[] = $row;
+  }
+
+  return $rows;
+}

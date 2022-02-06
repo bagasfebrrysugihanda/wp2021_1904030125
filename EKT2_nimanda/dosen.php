@@ -3,6 +3,9 @@ date_default_timezone_get("Asia/Jakarta");
 
 require 'functions.php';
 $dosen = query("SELECT * FROM dosen");
+if (isset($_POST['cari'])) {
+  $camaba = cari($_POST['keyword']);
+}
 ?>
 
 
@@ -76,6 +79,12 @@ $dosen = query("SELECT * FROM dosen");
       <!-- konten -->
       <h3><i class="fas fa-users"></i> Daftar Dosen</h3>
       <hr>
+      <!-- pencarian data -->
+      <form action="" method="POST">
+        <input type="text" id="keyword" size="50" name="keyword" placeholder="masukan keyword" autocomplete="off">
+        <button type="submit" class="btn btn-primary" name="cari">CARI</button>
+      </form>
+
       <table class="table table-striped">
         <thead>
           <tr>
@@ -96,7 +105,7 @@ $dosen = query("SELECT * FROM dosen");
               <td><?php echo $ds['nind']; ?></td>
               <td><?php echo $ds['nama_dosen']; ?></td>
               <td><?php echo $ds['email']; ?></td>
-              <td><a href="detailds.php?id=<?= $ds['no']; ?>" class="btn btn-warning role=" button">detail</a></td>
+              <td><a href="detailds.php?id=<?= $ds['id']; ?>" class="btn btn-warning role=" button">detail</a></td>
             </tr>
             <?php $no++ ?>
           <?php endforeach ?>
