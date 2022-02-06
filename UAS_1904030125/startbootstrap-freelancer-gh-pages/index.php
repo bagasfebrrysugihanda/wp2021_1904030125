@@ -160,6 +160,7 @@ if (isset($_POST['cari'])) {
                 <th scope="col">DISPLAY</th>
                 <th scope="col">DETAIL</th>
                 <th scope="col">BUY</th>
+                <th scope="col">INPUT</th>
               </tr>
             </thead>
             <tbody>
@@ -175,6 +176,7 @@ if (isset($_POST['cari'])) {
                   <td><img src="image/<?php echo $db['foto']; ?>" width="100px"></td>
                   <td><a href="detail.php?id=<?= $db['id']; ?>" class="btn btn-outline-light" button">Detail</a></td>
                   <td><a href="buy.php?id=<?= $db['id']; ?>" class="btn btn-outline-light" button">Buy</a></td>
+                  <td><a href="new.php?id=<?= $db['id']; ?>" class="btn btn-outline-light" button">New</a></td>
                 </tr>
                 <?php $no++ ?>
               <?php endforeach ?>
